@@ -1,0 +1,17 @@
+.col{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.result{
+    background-color: green;
+    color:#fff;
+    padding:20px;
+  }
+/* .row{
+    display: grid;
+    justify-items: center;
+} */
+#reader{
+    margin-top: 5rem;
+}
