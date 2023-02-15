@@ -15,3 +15,8 @@
 #reader{
     margin-top: 5rem;
 }
+.alert-already{
+    color: rgb(11, 9, 4);
+    background-color: rgb(132, 110, 45);
+    border-color: rgb(60, 91, 35);
+  }
