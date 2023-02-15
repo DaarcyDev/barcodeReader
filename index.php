@@ -9,11 +9,26 @@
   <audio id="myAudio2">
     <source src="failes.mp3" type="audio/ogg">
   </audio>
-  <!-- <script>
+  <script>
     var x = document.getElementById("myAudio1");
     var x2 = document.getElementById("myAudio2");
 
-    function showHint(str) {
+    // function showHint(str) {
+    //   if (str.length == 0) {
+    //     document.getElementById("txtHint").innerHTML = "";
+    //     return;
+    //   } else {
+    //     var xmlhttp = new XMLHttpRequest();
+    //     xmlhttp.onreadystatechange = function() {
+    //       if (this.readyState == 4 && this.status == 200) {
+    //         document.getElementById("txtHint").innerHTML = this.responseText;
+    //       }
+    //     };
+    //     xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    //     xmlhttp.send();
+    //   }
+    // }
+    function showHintWithAnaquel(str) {
       if (str.length == 0) {
         document.getElementById("txtHint").innerHTML = "";
         return;
@@ -24,21 +39,19 @@
             document.getElementById("txtHint").innerHTML = this.responseText;
           }
         };
-        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        var anaquel = document.getElementById("anaquel").value;
+        xmlhttp.open("GET", "gethint.php?q=" + str + "&anaquel=" + anaquel, true);
         xmlhttp.send();
       }
     }
-
-    function playAudio() {
-      x.play();
-    }
-  </script> -->
+  </script> 
   <div class="col" style="text-align:center;">
     <h4>SCAN RESULT</h4>
     <div>Employee name</div>
-    <form action="">
-      <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="result here" readonly="" />
-      <select>
+    <form action="gethint.php" method="get">
+      <!-- <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="result here" readonly="" /> -->
+      <input type="text" name="start" class="input" id="result" onkeyup="showHintWithAnaquel(this.value)" placeholder="result here" readonly="">
+      <select id="anaquel">
         <!-- option tag starts -->
         <option>Selecciona el anaquel</option>
         <option value="1">1</option>
@@ -77,7 +90,7 @@
 <script type="text/javascript">
   function onScanSuccess(qrCodeMessage) {
     document.getElementById("result").value = qrCodeMessage;
-    showHint(qrCodeMessage);
+    showHintWithAnaquel(qrCodeMessage);
     playAudio();
 
   }

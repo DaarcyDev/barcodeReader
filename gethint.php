@@ -7,39 +7,40 @@
 
 <?php
 // Array with names
-// $a[] = "Anna";
-// $a[] = "Brittany";
-// $a[] = "Cinderella";
-// $a[] = "Diana";
-// $a[] = "Eva";
-// $a[] = "Fiona";
-// $a[] = "Gunda";
-// $a[] = "Hege";
-// $a[] = "Inga";
-// $a[] = "Johanna";
-// $a[] = "Kitty";
-// $a[] = "Linda";
-// $a[] = "Nina";
-// $a[] = "Ophelia";
-// $a[] = "Petunia";
-// $a[] = "Amanda";
-// $a[] = "Raquel";
-// $a[] = "Cindy";
-// $a[] = "Doris";
-// $a[] = "Eve";
-// $a[] = "Evita";
-// $a[] = "Sunniva";
-// $a[] = "Tove";
-// $a[] = "Unni";
-// $a[] = "Violet";
-// $a[] = "Liza";
-// $a[] = "Elizabeth";
-// $a[] = "Ellen";
-// $a[] = "Wenche";
-// $a[] = "Vicky";
+$a[] = "Anna";
+$a[] = "Brittany";
+$a[] = "Cinderella";
+$a[] = "Diana";
+$a[] = "Eva";
+$a[] = "Fiona";
+$a[] = "Gunda";
+$a[] = "Hege";
+$a[] = "Inga";
+$a[] = "Johanna";
+$a[] = "Kitty";
+$a[] = "Linda";
+$a[] = "Nina";
+$a[] = "Ophelia";
+$a[] = "Petunia";
+$a[] = "Amanda";
+$a[] = "Raquel";
+$a[] = "Cindy";
+$a[] = "Doris";
+$a[] = "Eve";
+$a[] = "Evita";
+$a[] = "Sunniva";
+$a[] = "Tove";
+$a[] = "Unni";
+$a[] = "Violet";
+$a[] = "Liza";
+$a[] = "Elizabeth";
+$a[] = "Ellen";
+$a[] = "Wenche";
+$a[] = "Vicky";
 
 // get the q parameter from URL
 $q = $_REQUEST["q"];
+$anaquel = $_REQUEST["anaquel"];
 
 //$hint = "";
 $con = mysqli_connect('localhost', 'root', '', 'qrs');
@@ -52,7 +53,7 @@ if ($q != "") {
   $result = mysqli_query($con, "SELECT * FROM logs WHERE name='$q'");
   $rowcount = mysqli_num_rows($result);
   if ($rowcount == 0) {
-    $ret = mysqli_query($con, "INSERT INTO `logs`(name,Time) VALUES ('$q',NOW())");
+    $ret = mysqli_query($con, "INSERT INTO `logs`(name,Time,anaquel) VALUES ('$q',NOW(), '$anaquel')");
     if ($ret) {
       echo '<div class="alert alert-success"><strong>Success!</strong> employee successfully registered</div>' + date('l jS \of F Y h:i:s A');
       exit();
