@@ -53,7 +53,6 @@
       <input type="text" name="start" class="input" id="result" onkeyup="showHintWithAnaquel(this.value)" placeholder="result here" readonly="">
       <select id="anaquel">
         <!-- option tag starts -->
-        <option>Selecciona el anaquel</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
