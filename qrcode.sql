@@ -20,7 +20,8 @@ CREATE SCHEMA IF NOT EXISTS `qrs` DEFAULT CHARACTER SET utf8mb4; USE
 
 CREATE TABLE `logs` (
   `name` varchar(255) NOT NULL,
-  `Time` datetime NOT NULL
+  `Time` datetime NOT NULL,
+  `anaquel` varchar(255) NOT NULL,
 ) =InnoDB DEFAULT CHARSET=latin1;
 
 --
