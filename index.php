@@ -49,7 +49,6 @@
     <h4>SCAN RESULT</h4>
     <div>Employee name</div>
     <form action="gethint.php" method="get">
-      <!-- <input type="text" name="start" class="input" id="result" onkeyup="showHint(this.value)" placeholder="result here" readonly="" /> -->
       <input type="text" name="start" class="input" id="result" onkeyup="showHintWithAnaquel(this.value)" placeholder="result here" readonly="">
       <select id="anaquel">
         <!-- option tag starts -->
